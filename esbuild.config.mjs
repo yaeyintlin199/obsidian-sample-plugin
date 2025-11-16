@@ -15,7 +15,7 @@ const context = await esbuild.context({
 	banner: {
 		js: banner,
 	},
-	entryPoints: ["main.ts"],
+	entryPoints: ["src/main.tsx"],
 	bundle: true,
 	external: [
 		"obsidian",
@@ -39,6 +39,8 @@ const context = await esbuild.context({
 	treeShaking: true,
 	outfile: "main.js",
 	minify: prod,
+	jsx: 'automatic',
+	jsxImportSource: 'react',
 });
 
 if (prod) {
